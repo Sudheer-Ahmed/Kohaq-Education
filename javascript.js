@@ -1,4 +1,4 @@
- 
+
         // Mobile Navigation Toggle
         const mobileToggle = document.querySelector('.mobile-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -29,7 +29,7 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     window.scrollTo({
-                        top: target.offsetTop - 80,
+                        top: target.offsetTop - 70,
                         behavior: 'smooth'
                     });
                     
@@ -52,3 +52,14 @@
                 this.reset();
             });
         }
+        
+        // Registration button functionality
+        const registerBtns = document.querySelectorAll('.btn-primary');
+        registerBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if (!e.target.closest('#registration')) {
+                    e.preventDefault();
+                    alert('Thank you for your interest! Registration page will open shortly.');
+                }
+            });
+        });
